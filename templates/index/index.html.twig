@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BobAventure - Accueil
+{% endblock %}
+
+{% block body %}
+
+{% include 'assets/header.html.twig' %}
+<main>
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image" style="background-image: url('{{ asset('images/header/header_accueil.jpg') }}'); height: 400px;">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">Accueil</h1>
+                    <h4 class="mb-3">Subheading</h4>
+                    <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button" >Call to action</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+
+
+
+
+
+
+
+
+</main>
+
+
+{% endblock %}
+
