@@ -7,28 +7,168 @@
 
 {% include 'assets/header.html.twig' %}
 <main>
-    <!-- Background image -->
-    <div class="p-5 text-center bg-image" style="background-image: url('{{ asset('images/header/header_accueil.jpg') }}'); height: 400px;">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-white">
-                    <h1 class="mb-3">Accueil</h1>
-                    <h4 class="mb-3">Subheading</h4>
-                    <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button" >Call to action</a>
+    <!-- Section Header -->
+    <section class="header my-5">
+        <div class="p-5 text-center bg-image" style="background-image: url('{{ asset('images/header/header_accueil.jpg') }}'); height: 400px;">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3">Titre</h1>
+                        <h4 class="mb-3">Subheading</h4>
+                        <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button" >Call to action</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Background image -->
+    </section>
+    
+    <!-- Section Présentation -->
+    <section class="presentation my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="border">
+                        <h2 class="mb-4">Présentation</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, fugit. Voluptate totam a vitae aut, officia provident repellendus atque ipsum ullam animi cum libero explicabo, ipsam quas numquam autem earum.</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="border">
+                        image
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <hr>
 
+    <!-- Section Actus -->
+    <section class="actus my-5">
+        <div class="container">
+            <h2 class="mb-4">Nos actus</h2>
+            <div class="row">
+                <div class="col-4">
+                    <div class="border">
+                        <p>image</p>
+                        <h3 class="py-2">titre actus</h3>
+                        <p>lien vers l'actus</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border">
+                        <p>image</p>
+                        <h3 class="py-2">titre actus</h3>
+                        <p>lien vers l'actus</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border">
+                        <p>image</p>
+                        <h3 class="py-2">titre actus</h3>
+                        <p>lien vers l'actus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <hr>
 
+    <!-- Section A propos -->
+    <section class="a_propos my-5">
+        <div class="container">
+            <h2 class="mb-4">A propos</h2>
+            <div class="row">
+                <div class="col-6">
+                    <div class="border mb-4">
+                        <div class="d-flex justify-content-evenly align-items-center">
+                            <p>image</p>
+                            <div>
+                                <h3 class="py-2">titre a propos</h3>
+                                <p>description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="border mb-4">
+                        <div class="d-flex justify-content-evenly align-items-center">
+                            <p>image</p>
+                            <div>
+                                <h3 class="py-2">titre a propos</h3>
+                                <p>description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="border">
+                        <div class="d-flex justify-content-evenly align-items-center">
+                            <p>image</p>
+                            <div>
+                                <h3 class="py-2">titre a propos</h3>
+                                <p>description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="border">
+                        <div class="d-flex justify-content-evenly align-items-center">
+                            <p>image</p>
+                            <div>
+                                <h3 class="py-2">titre a propos</h3>
+                                <p>description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <hr>
 
+    <!-- Section Contact -->
+    <section class="contact my-5">
+        <div class="container">
+            <h2 class="mb-4">Contact</h2>
+            <div class="row">
+                <div class="col-8">
+                    <div class="border">
+                        <p>image</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="border">
+                        <div class="mb-4">
+                            <h3 class="py-2">moyen de contact</h3>
+                            <p>mail</p>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="py-2">moyen de contact</h3>
+                            <p>formualaire</p>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="py-2">moyen de contact</h3>
+                            <p>tel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
+    <hr>
 </main>
+
+<!-- Section Footer -->
+<section class="footer my-5">
+    <div class="container">
+        <footer>footer</footer>
+    </div>
+</section>
 
 
 {% endblock %}
