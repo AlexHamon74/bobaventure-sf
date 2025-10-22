@@ -1,1 +1,35 @@
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+    .font-grey {
+        color: #4a4a4a;
+    }
+
+    .font-orange {
+        color: #da7330;
+    }
+
+    .bgc-white {
+        background-color: #f9f8f4;
+    }
+
+    header nav .nav-link {
+        font-family: "Roboto", sans-serif;
+        color: #4a4a4a;
+        font-weight: 500;
+        margin: 0 4px;
+    }
+
+    header nav .nav-link:hover {
+        color: #da7330;
+    }
+
+    .btn-connexion {
+        background-color: #4a4a4a;
+        color: #f9f8f4 !important;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .btn-connexion:hover {
+        background-color: #545454;
+    }
