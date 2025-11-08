@@ -14,8 +14,12 @@ a {
     color: #da7330;
 }
 
-.bgc-white {
-    background-color: #f9f8f4;
+.bgc-primary {
+    background-color: #F4F2EF;
+}
+
+.bgc-secondary {
+    background-color: #f9f8f5;
 }
 
 h1 {
@@ -125,4 +129,30 @@ header nav .nav-link:hover {
 
     .hero-text .btn-hero-2:hover {
         background-color: #f9f8f42e;
+    }
+
+    /* ----- PRESENTATION ----- */
+    /* ------------------------ */
+    .presentation .card-custom {
+        background-color: #f9f8f5;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .presentation .card-custom:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .presentation .card-custom .icon-card {
+        background: linear-gradient(135deg, rgb(197, 166, 135) 0%, rgb(218, 115, 47) 100%);
+        color: #f9f8f5;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto;
     }
