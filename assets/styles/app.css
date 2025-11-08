@@ -129,6 +129,7 @@ header nav .nav-link:hover {
 
     .hero-text .btn-hero-2:hover {
         background-color: #f9f8f42e;
+        transition: 0.2s;
     }
 
     /* ----- PRESENTATION ----- */
@@ -155,4 +156,52 @@ header nav .nav-link:hover {
         align-items: center;
         justify-content: center;
         margin: 10px auto;
+    }
+
+    /* ----- ACTUS ----- */
+    /* ----------------- */
+
+    .actus .all-actus-btn {
+        background-color: #f9f8f5;
+        color: #4a4a4a;
+        text-align: center;
+        border: 1px solid #4a4a4a;
+        font-size: 14px;
+        padding: 10px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+    .actus .all-actus-btn:hover {
+        background-color: #da7330;
+        color: #F4F2EF;
+        border: none;
+        transition: 0.2s;
+    }
+
+    .card-actus {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-actus-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+
+    .card-actus-content a {
+        color: #4a4a4a;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+    .card-actus-content a:hover {
+        background-color: #da7330;
+        color: #F4F2EF;
+        transition: 0.2s;
     }
