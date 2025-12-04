@@ -24,7 +24,6 @@ a {
 
 h1 {
     font-family: "Lexend", sans-serif;
-    text-transform: uppercase;
 }
 
 p {
@@ -62,7 +61,7 @@ header nav .nav-link:hover {
 
 /* ----- HERO ----- */
 /* ---------------- */
-.hero {
+.hero-index {
     background-image: url('../images/img-hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -71,7 +70,7 @@ header nav .nav-link:hover {
     position: relative;
 }
 
-.hero * {
+.hero-index * {
     z-index: 2;
     color: #f9f8f4;
 }
@@ -92,7 +91,7 @@ header nav .nav-link:hover {
     opacity: 0.6;
 }
 
-.hero::before {
+.hero-index::before {
     content: "";
     position: absolute;
     pointer-events: none;
@@ -187,6 +186,11 @@ header nav .nav-link:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.card-actus .badge {
+    background-color: #da7330;
+    color: #f9f8f4;
+}
+
 .card-actus-img {
     width: 100%;
     height: 250px;
@@ -203,14 +207,19 @@ header nav .nav-link:hover {
     border-radius: 12px;
     font-weight: 600;
 }
+.card-actus-content .text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 .card-actus-content a:hover {
     background-color: #da7330;
     color: #F4F2EF;
     transition: 0.2s;
 }
-
-
 
 /* ----- GALERIE IMAGES ----- */
 /* -------------------------- */
@@ -248,4 +257,40 @@ header nav .nav-link:hover {
 
 .div7 {
     grid-area: 3 / 2 / 4 / 3;
+}
+
+
+/* ---------- PAGE ACTUALITES ---------- */
+/* ------------------------------------- */
+
+/* ----- HERO ----- */
+/* ---------------- */
+.hero-news {
+    margin-top: 76px;
+    background: linear-gradient(90deg,rgba(210, 197, 172, 1) 20%, rgba(236, 228, 212, 1) 100%);    
+    color: #4a4a4a;
+}
+
+.badge-form {
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid #4a4a4a75;
+    color: #4a4a4a;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+/* ----- FORMULAIRE ----- */
+/* ---------------------- */
+.badge-form:active {
+    border: none;
+    background-color: #4a4a4a;
+    color: #f9f8f4;
+}
+
+/* ----- ACTUS ----- */
+/* ----------------- */
+.badge-form:hover {
+    transform: scale(1.05);
 }

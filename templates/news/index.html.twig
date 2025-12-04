@@ -1,20 +1,110 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello NewsController!{% endblock %}
+{% block title %}BobAventure - Actualités{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	{% include 'assets/header.html.twig' %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <main class="bgc-primary">
+        <section class="hero-news py-5">
+            <div class="container">
+                <h1>Toutes les Actualités</h1>
+                <p>Suivez toutes nos aventures et nos actions sur le terrains</p>
+            </div>
+        </section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/var/www/html/symfony/bobaventure_sf/src/Controller/NewsController.php</code></li>
-        <li>Your template at <code>/var/www/html/symfony/bobaventure_sf/templates/news/index.html.twig</code></li>
-    </ul>
-</div>
+        <section class="form-search my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input type="text" class="form-control" placeholder="Rechercher" aria-label="rechercher " aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button class="badge-form me-2 px-2">
+                            <span>Tous</span>
+                        </button>
+                        <button class="badge-form me-2 px-2">
+                            <span>Annonce</span>
+                        </button>
+                        <button class="badge-form me-2 px-2">
+                            <span>Raid</span>
+                        </button>
+                        <button class="badge-form me-2 px-2">
+                            <span>Solidarité</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="actus">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 mb-5">
+                        <div class="card-actus position-relative">
+                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
+                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
+                            <div class="card-actus-content p-4">
+                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;15 Mars 2024</p>
+                                <h3>Raid Mauritanie 2024 : Une aventure solidaire</h3>
+                                <p class="text-truncate-2">Retour sur notre dernière expédition en Mauritanie où nous avons parcouru plus de 2000km à travers le désert test test test testtest test</p>
+                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 mb-5">
+                        <div class="card-actus position-relative">
+                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
+                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
+                            <div class="card-actus-content p-4">
+                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;8 Mars 2024</p>
+                                <h3>Distribution de fournitures scolaires au Maroc</h3>
+                                <p class="text-truncate-2">Plus de 500 enfants ont reçu des cahiers, stylos et livres dans les écoles des villages traversés...</p>
+                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 mb-5">
+                        <div class="card-actus position-relative">
+                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
+                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
+                            <div class="card-actus-content p-4">
+                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1 Mars 2024</p>
+                                <h3>Prochaine expédition : Cap sur le Sud Marocain</h3>
+                                <p class="text-truncate-2">Préparez-vous pour notre prochain raid prévu en octobre 2024. Inscriptions ouvertes...</p>
+                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 mb-5">
+                        <div class="card-actus position-relative">
+                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
+                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
+                            <div class="card-actus-content p-4">
+                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1 Mars 2024</p>
+                                <h3>Prochaine expédition : Cap sur le Sud Marocain</h3>
+                                <p class="text-truncate-2">Préparez-vous pour notre prochain raid prévu en octobre 2024. Inscriptions ouvertes...</p>
+                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 mb-5">
+                        <div class="card-actus position-relative">
+                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
+                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
+                            <div class="card-actus-content p-4">
+                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1 Mars 2024</p>
+                                <h3>Prochaine expédition : Cap sur le Sud Marocain</h3>
+                                <p class="text-truncate-2">Préparez-vous pour notre prochain raid prévu en octobre 2024. Inscriptions ouvertes...</p>
+                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}
