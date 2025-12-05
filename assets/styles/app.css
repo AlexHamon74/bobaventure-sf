@@ -6,6 +6,10 @@ a {
     text-decoration: none;
 }
 
+.font-light {
+    color: #f9f8f4;
+}
+
 .font-grey {
     color: #4a4a4a;
 }
@@ -20,6 +24,10 @@ a {
 
 .bgc-secondary {
     background-color: #f9f8f5;
+}
+
+.bgc-dark {
+    background-color: #4a4a4a;
 }
 
 h1 {
