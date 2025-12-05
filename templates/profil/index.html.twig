@@ -3,18 +3,85 @@
 {% block title %}Hello ProfilController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	{% include 'assets/header.html.twig' %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <main class="bgc-primary">
+        <section class="hero-news py-5">
+            <div class="container">
+                <h1>Mon Profil</h1>
+                <p>Gérez vos informations personnelles</p>
+            </div>
+        </section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/var/www/html/symfony/bobaventure_sf/src/Controller/ProfilController.php</code></li>
-        <li>Your template at <code>/var/www/html/symfony/bobaventure_sf/templates/profil/index.html.twig</code></li>
-    </ul>
-</div>
+        <section class="infos-profil">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="bgc-secondary border rounded-3">
+                            <div class="card-custom p-4">
+                                <div class="text-center">
+                                    <div class="icon-card">
+                                        <i class="fa-solid fa-user fa-2xl"></i>
+                                    </div>
+                                    <h2>Jean Dupont</h2>
+                                    <p>Membre depuis mars 2024</p>
+                                </div>
+                                <p>jean.dupont@email.fr</p>
+                                <p>+33 6 12 34 56 78</p>
+                                <p>Paris, France</p>
+                                <button class="btn btn-danger w-100"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Se déconnecter</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="bgc-secondary border rounded-3 p-4">
+                            <h2>Informations personnelles</h2>
+                            <p>Modifiez vos informations de profil</p>
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="firstname" class="form-label">Prénom</label>
+                                            <input type="text" class="form-control" id="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="nom" class="form-label">Nom</label>
+                                            <input type="text" class="form-control" id="nom">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="telephone" class="form-label">Téléphone</label>
+                                            <input type="tel" class="form-control" id="telephone">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="adresse" class="form-label">Adresse</label>
+                                            <input type="text" class="form-control" id="adresse">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="bio" class="form-label">Bio</label>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="submit-button w-100">Enregistrer les modifications</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}
