@@ -352,3 +352,26 @@ header nav .nav-link:hover {
 .submit-button:hover {
     background-color: #545454;
 }
+
+/* ---------- PAGE AUTHENTIFICATION ---------- */
+/* ------------------------------------------- */
+.bg-auth {
+    padding: 75px 0;
+    margin-top: 76px;
+    background: linear-gradient(90deg,rgba(210, 197, 172, 1) 20%, rgba(236, 228, 212, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login {
+    width: 500px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin: 0 36px;
+}
+
+.container-login p {
+    font-size: 14px;
+}
