@@ -1,89 +1,116 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfilController!{% endblock %}
+{% block title %}Hello ProfilController!
+{% endblock %}
 
 {% block body %}
 	{% include 'assets/header.html.twig' %}
 
-    <main class="bgc-primary">
-        <section class="hero-news py-5">
-            <div class="container">
-                <h1>Mon Profil</h1>
-                <p>Gérez vos informations personnelles</p>
-            </div>
-        </section>
+	<main class="bgc-primary">
+		<section class="hero-news py-5">
+			<div class="container">
+				<h1>Mon Profil</h1>
+				<p>Gérez vos informations personnelles</p>
+			</div>
+		</section>
 
-        <section class="infos-profil">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="bgc-secondary border rounded-3">
-                            <div class="card-custom p-4">
-                                <div class="text-center">
-                                    <div class="icon-card">
-                                        <i class="fa-solid fa-user fa-2xl"></i>
-                                    </div>
-                                    <h2>Jean Dupont</h2>
-                                    <p>Membre depuis mars 2024</p>
-                                </div>
-                                <p>jean.dupont@email.fr</p>
-                                <p>+33 6 12 34 56 78</p>
-                                <p>Paris, France</p>
-                                <button class="btn btn-danger w-100"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Se déconnecter</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-8">
-                        <div class="bgc-secondary border rounded-3 p-4">
-                            <h2>Informations personnelles</h2>
-                            <p>Modifiez vos informations de profil</p>
-                            <form action="">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="firstname" class="form-label">Prénom</label>
-                                            <input type="text" class="form-control" id="firstname">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="nom" class="form-label">Nom</label>
-                                            <input type="text" class="form-control" id="nom">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="telephone" class="form-label">Téléphone</label>
-                                            <input type="tel" class="form-control" id="telephone">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="adresse" class="form-label">Adresse</label>
-                                            <input type="text" class="form-control" id="adresse">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="bio" class="form-label">Bio</label>
-                                            <textarea class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="submit-button w-100">Enregistrer les modifications</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+		<section class="infos-profil">
+			<div class="container py-5">
+				<div class="row">
+					<div class="col-4">
+						<div class="bgc-secondary border rounded-3">
+							<div class="card-custom p-4">
+								<div class="text-center">
+									<div class="icon-card">
+										<i class="fa-solid fa-user fa-2xl"></i>
+									</div>
+									<h2>{{user.firstname}}
+										{{user.lastname}}</h2>
+									<p>Membre depuis
+										{{ user.createdAt|date('Y') }}</p>
+								</div>
+								<p>
+									<i class="fa-solid fa-envelope me-2"></i>
+									{{ user.email ?: 'Non connu' }}
+								</p>
 
-    {% include 'assets/footer.html.twig' %}
+								<p>
+									<i class="fa-solid fa-phone me-2"></i>
+									{{ user.phoneNumber ?: 'Non connu' }}
+								</p>
+
+								<p>
+									<i class="fa-solid fa-location-dot me-2"></i>
+									{{ user.adress ?: 'Non connu' }}
+								</p>
+								<a href="{{path('app_logout')}}" class="btn btn-danger w-100">
+									<i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Se déconnecter</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-8">
+						<div class="bgc-secondary border rounded-3 p-4">
+							<h2>Informations personnelles</h2>
+							<p>Modifiez vos informations de profil</p>
+							{% include "assets/flash.html.twig" %}
+							{{ form_start(form) }}
+							<div class="row">
+								<div class="col-6">
+									<div class="mb-3">
+										{{ form_label(form.firstname, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
+										{{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+										{{ form_errors(form.firstname) }}
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="mb-3">
+										{{ form_label(form.lastname, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+										{{ form_widget(form.lastname, {'attr': {'class': 'form-control'}}) }}
+										{{ form_errors(form.lastname) }}
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="mb-3">
+										{{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+										{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+										{{ form_errors(form.email) }}
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="mb-3">
+										{{ form_label(form.phone_number, 'Téléphone', {'label_attr': {'class': 'form-label'}}) }}
+										{{ form_widget(form.phone_number, {'attr': {'class': 'form-control'}}) }}
+										{{ form_errors(form.phone_number) }}
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="mb-3">
+										{{ form_label(form.adress, 'Adresse', {'label_attr': {'class': 'form-label'}}) }}
+										{{ form_widget(form.adress, {'attr': {'class': 'form-control'}}) }}
+										{{ form_errors(form.adress) }}
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="mb-3">
+										{{ form_label(form.description, 'Bio', {'label_attr': {'class': 'form-label'}}) }}
+										{{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': 4}}) }}
+										{{ form_errors(form.description) }}
+									</div>
+								</div>
+							</div>
+							{{ form_widget(form.submit, {
+                                'attr': {
+                                    'class': 'submit-button w-100'
+                                }
+                            }) }}
+							{{ form_end(form) }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	{% include 'assets/footer.html.twig' %}
 {% endblock %}
+

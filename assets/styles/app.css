@@ -63,6 +63,17 @@ header nav .nav-link:hover {
     background-color: #545454;
 }
 
+.btn-deconnexion {
+    background-color: #da7330;
+    color: #f9f8f4 !important;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.btn-deconnexion:hover {
+    background-color: #c45e1f;
+}
+
 
 /* ---------- PAGE D'ACCUEIL ---------- */
 /* ------------------------------------ */
