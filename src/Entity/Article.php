@@ -17,7 +17,7 @@ class Article
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $title = null;
 
     /**
      * @var Collection<int, ArticleImage>
@@ -30,6 +30,12 @@ class Article
 
     #[ORM\Column]
     private ?\DateTimeImmutable $published_at = null;
+
+    #[ORM\PrePersist]
+    public function setPublishedAtValue(): void
+    {
+        $this->published_at = new \DateTimeImmutable();
+    }
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     private ?Category $category = null;
@@ -44,14 +50,14 @@ class Article
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getTitle(): ?string
     {
-        return $this->name;
+        return $this->title;
     }
 
-    public function setName(string $name): static
+    public function setTitle(string $title): static
     {
-        $this->name = $name;
+        $this->title = $title;
 
         return $this;
     }
