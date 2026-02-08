@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}BobAventure - Actualités{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block body %}
 	{% include 'assets/header.html.twig' %}
@@ -42,66 +42,22 @@
         <section class="actus">
             <div class="container">
                 <div class="row">
+                {% for article in articles %}
                     <div class="col-lg-4 col-12 mb-5">
                         <div class="card-actus position-relative">
-                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
+                            <span class="badge position-absolute top-0 end-0 m-2">{{ article.category.name }}</span>
+                            <img class="card-actus-img" src="{{ vich_uploader_asset(article, 'main_image_file') }}" alt="{{ article.title }}">
                             <div class="card-actus-content p-4">
-                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;15 Mars 2024</p>
-                                <h3>Raid Mauritanie 2024 : Une aventure solidaire</h3>
-                                <p class="text-truncate-2">Retour sur notre dernière expédition en Mauritanie où nous avons parcouru plus de 2000km à travers le désert test test test testtest test</p>
-                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;{{ article.publishedAt|date('d/m/Y') }}</p>
+                                <h3>{{ article.title }}</h3>
+                                <p class="text-truncate-2">{{ article.content }}</p>
+                                <a class="d-block" href="">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-12 mb-5">
-                        <div class="card-actus position-relative">
-                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
-                            <div class="card-actus-content p-4">
-                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;8 Mars 2024</p>
-                                <h3>Distribution de fournitures scolaires au Maroc</h3>
-                                <p class="text-truncate-2">Plus de 500 enfants ont reçu des cahiers, stylos et livres dans les écoles des villages traversés...</p>
-                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i> </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-12 mb-5">
-                        <div class="card-actus position-relative">
-                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
-                            <div class="card-actus-content p-4">
-                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1 Mars 2024</p>
-                                <h3>Prochaine expédition : Cap sur le Sud Marocain</h3>
-                                <p class="text-truncate-2">Préparez-vous pour notre prochain raid prévu en octobre 2024. Inscriptions ouvertes...</p>
-                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-12 mb-5">
-                        <div class="card-actus position-relative">
-                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
-                            <div class="card-actus-content p-4">
-                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1 Mars 2024</p>
-                                <h3>Prochaine expédition : Cap sur le Sud Marocain</h3>
-                                <p class="text-truncate-2">Préparez-vous pour notre prochain raid prévu en octobre 2024. Inscriptions ouvertes...</p>
-                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-12 mb-5">
-                        <div class="card-actus position-relative">
-                            <span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-                            <img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
-                            <div class="card-actus-content p-4">
-                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1 Mars 2024</p>
-                                <h3>Prochaine expédition : Cap sur le Sud Marocain</h3>
-                                <p class="text-truncate-2">Préparez-vous pour notre prochain raid prévu en octobre 2024. Inscriptions ouvertes...</p>
-                                <a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                {% else %}
+                    <h4 class="mb-5">Aucun article disponible pour le moment.</h4>
+                {% endfor %}
                 </div>
             </div>
         </section>
