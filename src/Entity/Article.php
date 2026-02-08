@@ -7,8 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
+#[Vich\Uploadable]
+#[ORM\HasLifecycleCallbacks]
 class Article
 {
     #[ORM\Id]
@@ -30,6 +34,12 @@ class Article
 
     #[ORM\Column]
     private ?\DateTimeImmutable $published_at = null;
+
+    #[Vich\UploadableField(mapping: 'articleMainImage', fileNameProperty: 'main_image')]
+    private ?File $main_image_file = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $main_image = null;
 
     #[ORM\PrePersist]
     public function setPublishedAtValue(): void
@@ -114,6 +124,30 @@ class Article
         $this->published_at = $published_at;
 
         return $this;
+    }
+
+    public function getMainImage(): ?string
+    {
+        return $this->main_image;
+    }
+
+    public function setMainImage(?string $main_image): static
+    {
+        $this->main_image = $main_image;
+
+        return $this;
+    }
+
+    public function setMainImageFile(?File $main_image_file): static
+    {
+        $this->main_image_file = $main_image_file;
+
+        return $this;
+    }
+
+    public function getMainImageFile(): ?File
+    {
+        return $this->main_image_file;
     }
 
     public function getCategory(): ?Category

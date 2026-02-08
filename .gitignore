@@ -28,3 +28,7 @@
 # phpstan.neon
 analyse.md
 ###< phpstan/phpstan ###
+
+###> symfony/vich-uploader ###
+/public/images/articles/*
+/public/images/articleMainImage/*
