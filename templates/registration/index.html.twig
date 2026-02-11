@@ -1,26 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}
+	{{title}}
+{% endblock %}
 
 {% block body %}
-{% include 'assets/header.html.twig' %}
-    <main>
-        <div class="container pt-4">
-            <h1>Register</h1>
+	{% include 'assets/header.html.twig' %}
+
+	<section class="bg-auth">
+		<div class="container container-login bgc-secondary">
+
+			{{ form_start(registrationForm) }}
+
+			<h1>Inscription</h1>
+			<p>Créez votre compte BOB Aventure</p>
 
             {{ form_errors(registrationForm) }}
 
-            {{ form_start(registrationForm) }}
-                {{ form_row(registrationForm.email) }}
-                {{ form_row(registrationForm.firstname) }}
-                {{ form_row(registrationForm.lastname) }}
-                {{ form_row(registrationForm.plainPassword, {
-                    label: 'Password'
-                }) }}
-                {{ form_row(registrationForm.agreeTerms) }}
+			<div class="mb-3">
+				{{ form_label(registrationForm.email, 'Email') }}
+				{{ form_widget(registrationForm.email, {attr: {placeholder: 'Votre email'}}) }}
+				{{ form_errors(registrationForm.email) }}
+			</div>
 
-                <button type="submit" class="btn">Register</button>
-            {{ form_end(registrationForm) }}
-        </div>
-    </main>
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					{{ form_label(registrationForm.firstname, 'Prénom') }}
+					{{ form_widget(registrationForm.firstname, {attr: {placeholder: 'Votre prénom'}}) }}
+					{{ form_errors(registrationForm.firstname) }}
+				</div>
+
+				<div class="col-md-6 mb-3">
+					{{ form_label(registrationForm.lastname, 'Nom') }}
+					{{ form_widget(registrationForm.lastname, {attr: {placeholder: 'Votre nom'}}) }}
+					{{ form_errors(registrationForm.lastname) }}
+				</div>
+			</div>
+
+			<div class="mb-3">
+				{{ form_label(registrationForm.plainPassword, 'Mot de passe') }}
+				{{ form_widget(registrationForm.plainPassword, {attr: {placeholder: 'Choisissez un mot de passe'}}) }}
+				{{ form_errors(registrationForm.plainPassword) }}
+			</div>
+
+			<div class="mb-3">
+				{{ form_widget(registrationForm.agreeTerms) }}
+				{{ form_label(registrationForm.agreeTerms) }}
+				{{ form_errors(registrationForm.agreeTerms) }}
+			</div>
+
+			<button type="submit" class="submit-button w-100">
+				S'inscrire
+			</button>
+
+			<p class="mt-3 text-center">Vous avez déjà un compte ?
+				<a href="{{ path('app_login') }}">Se connecter</a>
+			</p>
+
+			{{ form_end(registrationForm) }}
+
+		</div>
+	</section>
+
+	{% include 'assets/footer.html.twig' %}
 {% endblock %}
+

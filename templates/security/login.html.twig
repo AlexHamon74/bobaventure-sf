@@ -14,10 +14,10 @@
             <h1>Connexion</h1>
             <p>Connectez-vous à votre compte BOB Aventure</p>
 
-            <label for="username">Email</label>
+            <label class="form-label" for="username">Email</label>
             <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control mb-3" autocomplete="email" required autofocus>
 
-            <label for="password">Mot de passe</label>
+            <label class="form-label" for="password">Mot de passe</label>
             <input type="password" name="_password" id="password" class="form-control mb-1" autocomplete="current-password" required>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -31,7 +31,9 @@
                 Se connecter
             </button>
 
-            <p>Vous n'avez pas de compte ? <a href="{{path('app_register')}}">S'enregistrer</a></p>
+            <p class="mt-3 text-center">Vous n'avez pas de compte ? 
+                <a href="{{path('app_register')}}">S'enregistrer</a>
+            </p>
         </form>
     </div>
 </section>
