@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,14 @@ final class NewsController extends AbstractController
         return $this->render('news/index.html.twig', [
             'title' => 'Bob-Aventure - Blog',
             'articles' => $articles,
+        ]);
+    }
+
+    #[Route('/news/{id}', name:'app_news_details')]
+    public function details(Article $article): Response
+    {
+        return $this->render('news/details.html.twig', [
+            'article' => $article,
         ]);
     }
 }
