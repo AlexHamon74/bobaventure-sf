@@ -50,7 +50,7 @@
                             <div class="card-actus-content p-4">
                                 <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;{{ article.publishedAt|date('d/m/Y') }}</p>
                                 <h3>{{ article.title }}</h3>
-                                <p class="text-truncate-2">{{ article.content }}</p>
+                                <p class="text-truncate-2">{{ article.content|raw }}</p>
                                 <a class="d-block" href="{{ path('app_news_details', {'id': article.id}) }}">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
