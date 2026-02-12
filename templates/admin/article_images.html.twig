@@ -1,0 +1,5 @@
+{% for image in field.value %}
+    <img src="{{ vich_uploader_asset(image, 'imageFile') }}" style="max-width:200px; border-radius:8px;">
+{% else %}
+    <span class="badge badge-outline">Aucune image supplémentaire pour cet article.</span>
+{% endfor %}
