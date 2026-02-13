@@ -30,14 +30,17 @@ class ArticleCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title')
-                ->setLabel('Titre de l\'article'),
+                ->setLabel('Titre de l\'article')
+                ->setRequired(true),
 
             AssociationField::new('category')
-                ->setLabel('Catégorie'),
+                ->setLabel('Catégorie')
+                ->setRequired(true),
 
             TextEditorField::new('content')
                 ->setLabel('Contenu de l\'article')
-                ->onlyOnForms(),
+                ->onlyOnForms()
+                ->setRequired(true),
 
             TextField::new('content')
                 ->setLabel('Contenu de l\'article')

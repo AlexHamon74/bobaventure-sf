@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 #[Vich\Uploadable]
@@ -21,6 +22,7 @@ class Article
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:'Ce champ est obligatoire')]
     private ?string $title = null;
 
     /**
@@ -48,6 +50,8 @@ class Article
     }
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[ORM\JoinColumn(nullable: false)]
+    #[Assert\NotBlank(message:'Ce champ est obligatoire')]
     private ?Category $category = null;
 
     public function __construct()

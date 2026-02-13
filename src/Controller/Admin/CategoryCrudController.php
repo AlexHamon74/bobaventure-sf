@@ -18,7 +18,8 @@ class CategoryCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name')
-                ->setLabel('Nom de la catégorie'),
+            ->setLabel('Nom de la catégorie')
+            ->setRequired(true),
         ];
     }
 
