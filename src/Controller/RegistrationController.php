@@ -26,8 +26,6 @@ class RegistrationController extends AbstractController
 
             $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
 
-            $user->setCreatedAt(new \DateTimeImmutable());
-
             $entityManager->persist($user);
             $entityManager->flush();
             $this->addFlash('success', 'Votre compte a été enregistré, merci');

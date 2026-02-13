@@ -19,8 +19,7 @@ class AppFixtures extends Fixture
             ->setRoles(['ROLE_USER'])
             ->setPassword($this->hasher->hashPassword($regularUser, 'bob'))
             ->setFirstname('bob')
-            ->setLastname('test')
-            ->setCreatedAt(new \DateTimeImmutable());
+            ->setLastname('test');
 
         $manager->persist($regularUser);
 
@@ -30,8 +29,7 @@ class AppFixtures extends Fixture
             ->setRoles(['ROLE_ADMIN'])
             ->setPassword($this->hasher->hashPassword($adminUser, 'admin'))
             ->setFirstname('admin')
-            ->setLastname('test')
-            ->setCreatedAt(new \DateTimeImmutable());
+            ->setLastname('test');
 
         $manager->persist($adminUser);
 
