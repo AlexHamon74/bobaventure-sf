@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\ProfilType;
+use App\Form\ProfilFormType;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,7 +24,7 @@ final class ProfilController extends AbstractController
             }
         }
 
-        $form = $this->createForm(ProfilType::class, $user);
+        $form = $this->createForm(ProfilFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -38,7 +38,7 @@ final class ProfilController extends AbstractController
         }
 
         return $this->render('profil/index.html.twig', [
-            'controller_name' => 'Bob-Aventure - Mon Profil',
+            'title' => 'Bob-Aventure - Mon Profil',
             'user' => $user,
             'form' => $form
         ]);

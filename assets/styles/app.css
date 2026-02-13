@@ -308,7 +308,7 @@ header nav .nav-link:hover {
 }
 
 /* ---------- PAGE PROFIL ---------- */
-/* ------------------------------------- */
+/* --------------------------------- */
 
 /* ----- HERO ----- */
 /* ---------------- */
@@ -345,6 +345,7 @@ header nav .nav-link:hover {
 }
 .submit-button:hover {
     background-color: #545454;
+    color: #f9f8f4;
 }
 
 /* ---------- PAGE AUTHENTIFICATION ---------- */

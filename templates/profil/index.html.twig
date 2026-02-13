@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfilController!
-{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block body %}
 	{% include 'assets/header.html.twig' %}
@@ -57,52 +56,48 @@
 							<div class="row">
 								<div class="col-6">
 									<div class="mb-3">
-										{{ form_label(form.firstname, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
-										{{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+										{{ form_label(form.firstname, 'Prénom') }}
+										{{ form_widget(form.firstname) }}
 										{{ form_errors(form.firstname) }}
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="mb-3">
-										{{ form_label(form.lastname, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
-										{{ form_widget(form.lastname, {'attr': {'class': 'form-control'}}) }}
+										{{ form_label(form.lastname, 'Nom') }}
+										{{ form_widget(form.lastname) }}
 										{{ form_errors(form.lastname) }}
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="mb-3">
-										{{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
-										{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+										{{ form_label(form.email, 'Email') }}
+										{{ form_widget(form.email) }}
 										{{ form_errors(form.email) }}
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="mb-3">
-										{{ form_label(form.phone_number, 'Téléphone', {'label_attr': {'class': 'form-label'}}) }}
-										{{ form_widget(form.phone_number, {'attr': {'class': 'form-control'}}) }}
+										{{ form_label(form.phone_number, 'Téléphone') }}
+										{{ form_widget(form.phone_number) }}
 										{{ form_errors(form.phone_number) }}
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="mb-3">
-										{{ form_label(form.adress, 'Adresse', {'label_attr': {'class': 'form-label'}}) }}
-										{{ form_widget(form.adress, {'attr': {'class': 'form-control'}}) }}
+										{{ form_label(form.adress, 'Adresse') }}
+										{{ form_widget(form.adress) }}
 										{{ form_errors(form.adress) }}
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="mb-3">
-										{{ form_label(form.description, 'Bio', {'label_attr': {'class': 'form-label'}}) }}
-										{{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': 4}}) }}
+										{{ form_label(form.description, 'Présentation') }}
+										{{ form_widget(form.description, {'attr': {'rows': 4}}) }}
 										{{ form_errors(form.description) }}
 									</div>
 								</div>
 							</div>
-							{{ form_widget(form.submit, {
-                                'attr': {
-                                    'class': 'submit-button w-100'
-                                }
-                            }) }}
+							{{ form_widget(form.submit) }}
 							{{ form_end(form) }}
 						</div>
 					</div>
