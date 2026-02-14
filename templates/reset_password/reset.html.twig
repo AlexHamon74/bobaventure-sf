@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bob-aventure - Nouveau mot de passe{% endblock %}
+
+{% block body %}
+    {% include 'assets/header.html.twig' %}
+
+    <section class="bg-auth">
+        <div class="container container-login bgc-secondary">
+
+            {{ form_start(resetForm) }}
+
+            <h1>Nouveau mot de passe</h1>
+            <p>Choisissez un nouveau mot de passe sécurisé</p>
+
+            <div class="mb-3">
+                {{ form_widget(resetForm.plainPassword) }}
+                {{ form_errors(resetForm.plainPassword) }}
+            </div>
+
+            <button type="submit" class="submit-button w-100">Réinitialiser</button>
+
+            {{ form_end(resetForm) }}
+
+        </div>
+    </section>
+
+    {% include 'assets/footer.html.twig' %}
+{% endblock %}

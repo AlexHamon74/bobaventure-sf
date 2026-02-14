@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bob-aventure - Email envoyé{% endblock %}
+
+{% block body %}
+    {% include 'assets/header.html.twig' %}
+
+    <section class="bg-auth">
+        <div class="container container-login bgc-secondary text-center">
+
+            <h1>Email envoyé 📩</h1>
+            <p>Si un compte correspond à votre adresse email, un message vient d'être envoyé contenant un lien de réinitialisation.</p>
+
+            <p>Ce lien expirera dans{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+            <p class="mt-3">
+                Vous n'avez rien reçu ?
+                <a href="{{ path('app_forgot_password_request') }}">Réessayer</a>
+            </p>
+
+        </div>
+    </section>
+
+    {% include 'assets/footer.html.twig' %}
+{% endblock %}
