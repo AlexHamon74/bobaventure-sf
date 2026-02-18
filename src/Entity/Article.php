@@ -54,6 +54,11 @@ class Article
     #[Assert\NotBlank(message:'Ce champ est obligatoire')]
     private ?Category $category = null;
 
+    #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message:'Ce champ est obligatoire')]
+    #[Assert\Length(max: 100,maxMessage: 'Le texte ne doit pas dépasser {{ limit }} caractères')]
+    private ?string $description = null;
+
     public function __construct()
     {
         $this->articleImages = new ArrayCollection();
@@ -162,6 +167,18 @@ class Article
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): static
+    {
+        $this->description = $description;
 
         return $this;
     }

@@ -33,6 +33,11 @@ class ArticleCrudController extends AbstractCrudController
                 ->setLabel('Titre de l\'article')
                 ->setRequired(true),
 
+            TextField::new('description')
+                ->setLabel('Description de l\'article')
+                ->setHelp("Le texte de doit pas dépasser 100 caractères")
+                ->setRequired(true),
+
             AssociationField::new('category')
                 ->setLabel('Catégorie')
                 ->setRequired(true),
