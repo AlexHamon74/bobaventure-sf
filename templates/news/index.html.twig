@@ -43,18 +43,7 @@
             <div class="container">
                 <div class="row">
                 {% for article in articles %}
-                    <div class="col-lg-4 col-12 mb-5">
-                        <div class="card-actus position-relative">
-                            <span class="badge position-absolute top-0 end-0 m-2">{{ article.category.name }}</span>
-                            <img class="card-actus-img" src="{{ vich_uploader_asset(article, 'main_image_file') }}" alt="{{ article.title }}">
-                            <div class="card-actus-content p-4">
-                                <p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;{{ article.publishedAt|date('d/m/Y') }}</p>
-                                <h3>{{ article.title }}</h3>
-                                <p class="text-truncate-2">{{ article.content|raw }}</p>
-                                <a class="d-block" href="{{ path('app_news_details', {'id': article.id}) }}">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    {% include 'assets/card.html.twig' with { article: article } %}
                 {% else %}
                     <h4 class="mb-5">Aucun article disponible pour le moment.</h4>
                 {% endfor %}
