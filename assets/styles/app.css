@@ -253,21 +253,29 @@ header nav .nav-link:hover {
 }
 
 .badge-form {
-    border-radius: 20px;
-    background-color: transparent;
-    border: 1px solid #4a4a4a75;
+    border-radius: 50px;
+    border: 1px solid rgba(74, 74, 74, 0.45);
     color: #4a4a4a;
-    font-size: 12px;
-    font-weight: bold;
-    transition: 0.2s;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    transition: all 0.25s ease;
 }
 
-/* ----- FORMULAIRE ----- */
-/* ---------------------- */
-.badge-form:active {
-    border: none;
+.badge-form:hover {
     background-color: #4a4a4a;
     color: #f9f8f4;
+    text-decoration: none;
+}
+
+.badge-form.active {
+    background-color: #4a4a4a;
+    color: #f9f8f4;
+}
+
+.badge-form:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(74,74,74,0.25);
 }
 
 /* ---------- PAGE PROFIL ---------- */

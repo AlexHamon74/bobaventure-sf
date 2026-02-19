@@ -4,52 +4,53 @@
 
 {% block body %}
 	{% include 'assets/header.html.twig' %}
-    <main class="bgc-primary">
-        <section class="hero-news py-5">
-            <div class="container">
-                <h1>Toutes les Actualités</h1>
-                <p>Suivez toutes nos aventures et nos actions sur le terrains</p>
-            </div>
-        </section>
+	<main class="bgc-primary">
+		<section class="hero-news py-5">
+			<div class="container">
+				<h1>Toutes les Actualités</h1>
+				<p>Suivez toutes nos aventures et nos actions sur le terrains</p>
+			</div>
+		</section>
 
-        <section class="form-search my-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="text" class="form-control" placeholder="Rechercher" aria-label="rechercher " aria-describedby="addon-wrapping">
-                        </div>
-                    </div>
-                    <div class="col-12 mt-3">
-                        <button class="badge-form me-2 px-2">
-                            <span>Tous</span>
-                        </button>
-                        <button class="badge-form me-2 px-2">
-                            <span>Annonce</span>
-                        </button>
-                        <button class="badge-form me-2 px-2">
-                            <span>Raid</span>
-                        </button>
-                        <button class="badge-form me-2 px-2">
-                            <span>Solidarité</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="actus">
-            <div class="container">
-                <div class="row">
-                {% for article in articles %}
-                    {% include 'assets/card.html.twig' with { article: article } %}
-                {% else %}
-                    <h4 class="mb-5">Aucun article disponible pour le moment.</h4>
-                {% endfor %}
-                </div>
-            </div>
-        </section>
-    </main>
-    {% include 'assets/footer.html.twig' %}
+		<section class="form-search my-5">
+			<div class="container">
+				<form method="get" action="{{ path('app_news') }}">
+					<div class="row">
+						<div class="col-12">
+							<div class="input-group">
+								<span class="input-group-text">
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</span>
+								<input type="text" name="q" class="form-control" value="{{ currentSearch }}" placeholder="Rechercher">
+							</div>
+						</div>
+						<div class="col-12 d-flex flex-wrap gap-2 mt-3">
+							<a href="{{ path('app_news') }}" class="badge-form {{ currentCategory is empty ? 'active' : '' }}">
+								Tous
+							</a>
+							{% for category in categories %}
+								<a href="{{ path('app_news', {q: currentSearch, category: category.id}) }}" class="badge-form {{ currentCategory == category.id ? 'active' : '' }}">
+									{{ category.name }}
+								</a>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="actus">
+				<div class="container">
+					<div class="row">
+						{% for article in articles %}
+							{% include 'assets/card.html.twig' with { article: article } %}
+						{% else %}
+							<h4 class="mb-5">Aucun article disponible pour le moment.</h4>
+						{% endfor %}
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+	{% include 'assets/footer.html.twig' %}
 {% endblock %}
+
