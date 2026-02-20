@@ -4,9 +4,9 @@
 
 {% block body %}
     {% include 'assets/header.html.twig' %}
-
-    <section class="bg-auth">
-        <div class="container container-login bgc-secondary">
+<main class="bgc-linear-primary">
+    <section class="d-flex align-items-center justify-content-center py-5">
+        <div class="container container-auth bgc-secondary p-5 shadow mx-4">
 
             {{ form_start(requestForm) }}
 
@@ -35,6 +35,7 @@
 
         </div>
     </section>
+</main>
 
     {% include 'assets/footer.html.twig' %}
 {% endblock %}

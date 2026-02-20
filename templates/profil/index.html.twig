@@ -5,50 +5,45 @@
 {% block body %}
 	{% include 'assets/header.html.twig' %}
 
-	<main class="bgc-primary">
-		<section class="hero-news py-5">
+	<main>
+		<section class="hero-news py-5 bgc-linear-primary">
 			<div class="container">
 				<h1>Mon Profil</h1>
 				<p>Gérez vos informations personnelles</p>
 			</div>
 		</section>
 
-		<section class="infos-profil">
-			<div class="container py-5">
+		<section class="infos-profil py-5 bgc-secondary">
+			<div class="container">
 				<div class="row">
-					<div class="col-4">
-						<div class="bgc-secondary border rounded-3">
-							<div class="card-custom p-4">
-								<div class="text-center">
-									<div class="icon-card">
-										<i class="fa-solid fa-user fa-2xl"></i>
-									</div>
-									<h2>{{user.firstname}}
-										{{user.lastname}}</h2>
-									<p>Membre depuis
-										{{ user.createdAt|date('Y') }}</p>
+					<div class="col-lg-4 col-12">
+						<div class="bgc-secondary-light rounded-3 mb-4 shadow p-4">
+							<div class="text-center">
+								<div class="icon-card color-secondary">
+									<i class="fa-solid fa-user fa-2xl"></i>
 								</div>
-								<p>
-									<i class="fa-solid fa-envelope me-2"></i>
-									{{ user.email ?: 'Non connu' }}
-								</p>
-
-								<p>
-									<i class="fa-solid fa-phone me-2"></i>
-									{{ user.phoneNumber ?: 'Non connu' }}
-								</p>
-
-								<p>
-									<i class="fa-solid fa-location-dot me-2"></i>
-									{{ user.adress ?: 'Non connu' }}
-								</p>
-								<a href="{{path('app_logout')}}" class="btn btn-danger w-100">
-									<i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Se déconnecter</a>
+								<h2>{{user.firstname}} {{user.lastname}}</h2>
+								<p>Membre depuis{{ user.createdAt|date('Y') }}</p>
 							</div>
+							<p>
+								<i class="fa-solid fa-envelope me-2"></i>
+								{{ user.email ?: 'Non connu' }}
+							</p>
+
+							<p>
+								<i class="fa-solid fa-phone me-2"></i>
+								{{ user.phoneNumber ?: 'Non connu' }}
+							</p>
+
+							<p>
+								<i class="fa-solid fa-location-dot me-2"></i>
+								{{ user.adress ?: 'Non connu' }}
+							</p>
+							<a href="{{path('app_logout')}}" class="btn btn-danger w-100"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Se déconnecter</a>
 						</div>
 					</div>
-					<div class="col-8">
-						<div class="bgc-secondary border rounded-3 p-4">
+					<div class="col-lg-8 col-12">
+						<div class="bgc-secondary-light rounded-3 p-4 shadow">
 							<h2>Informations personnelles</h2>
 							<p>Modifiez vos informations de profil</p>
 							{% include "assets/flash.html.twig" %}

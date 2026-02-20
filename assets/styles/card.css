@@ -1,0 +1,46 @@
+/* --------------- CARD ACTUS --------------- */
+/* ------------------------------------------ */
+.card-actus {
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-actus:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-actus-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.card-actus-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-actus-content .text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+    min-height: calc(1.5em * 2); /* calcul basé sur une font-size de 16px pour les <p> */
+}
+
+.card-actus-content a {
+    padding: 10px 28px;
+    font-weight: 600;
+    border-radius: 12px;
+}
+.card-actus-content a:hover {
+    background-color: #da7330;
+    color: #F4F2EF;
+    transition: 0.2s;
+}

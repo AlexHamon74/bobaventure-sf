@@ -136,7 +136,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-				<ul class="navbar-nav">
+				<ul class="navbar-nav fw-medium gap-lg-3">
 					<li class="nav-item">
 						<a class="nav-link" href="{{path('app_index')}}">Accueil</a>
 					</li>
@@ -153,11 +153,11 @@
 						<a class="nav-link" href="{{ path('app_profil', {id:app.user.id}) }}">Profil</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link btn-deconnexion px-3" href="{{path('app_logout')}}">Déconnexion</a>
+						<a class="nav-link btn-tertiary" href="{{path('app_logout')}}">Déconnexion</a>
 					</li>
 					{% else %}
 					<li class="nav-item">
-						<a class="nav-link btn-connexion px-3" href="{{path('app_login')}}">Connexion</a>
+						<a class="nav-link btn-primary" href="{{path('app_login')}}">Connexion</a>
 					</li>
 					{% endif %}
 				</ul>

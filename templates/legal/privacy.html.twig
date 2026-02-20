@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	{% include 'assets/header.html.twig' %}
+
+	<main>
+		<div class="container py-5">
+			<h1>Politique de confidentialité</h1>
+
+			<h2>Responsable du traitement</h2>
+			<p>
+				[Nom de l'association]<br>
+				[Adresse]<br>
+				Contact : [Email]
+			</p>
+
+			<h2>Données collectées</h2>
+			<p>
+				Lors de la création d'un compte, nous collectons :
+							    prénom, nom, adresse email et mot de passe (stocké de manière sécurisée).
+			</p>
+			<p>
+				Des informations facultatives peuvent être ajoutées au profil :
+							    adresse postale, téléphone et présentation.
+			</p>
+
+			<h2>Finalité</h2>
+			<p>
+				Les données sont utilisées uniquement pour permettre la gestion
+							    des comptes utilisateurs et l'accès à l'espace membre.
+			</p>
+
+			<h2>Durée de conservation</h2>
+			<p>
+				Les données sont conservées tant que le compte est actif.
+							    Elles sont supprimées après suppression du compte.
+			</p>
+
+			<h2>Destinataires</h2>
+			<p>
+				Les données sont accessibles uniquement aux responsables de l'association
+							    et à l'hébergeur du site.
+			</p>
+
+			<h2>Vos droits</h2>
+			<p>
+				Conformément au RGPD, vous pouvez demander l'accès,
+							    la rectification ou la suppression de vos données
+							    en contactant : [Email].
+			</p>
+
+			<h2>Cookies</h2>
+			<p>
+				Le site utilise uniquement des cookies techniques nécessaires
+							    au fonctionnement de la session utilisateur.
+			</p>
+
+			<p>Dernière mise à jour : [Date]</p>
+		</div>
+	</main>
+
+	{% include 'assets/footer.html.twig' %}
+{% endblock %}
+

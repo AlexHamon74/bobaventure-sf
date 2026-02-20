@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	{% include 'assets/header.html.twig' %}
+
+	<main>
+		<div class="container py-5">
+			<h1>Mentions légales</h1>
+
+			<h2>Éditeur du site</h2>
+			<p>
+				[Nom complet de l'association]<br>
+				Association loi 1901<br>
+				Siège social : [Adresse complète]<br>
+				Email : [Adresse email de contact]
+			</p>
+
+			<h2>Directeur de la publication</h2>
+			<p>
+				[Nom et prénom du président], en qualité de Président de l'association.
+			</p>
+
+			<h2>Hébergement</h2>
+			<p>
+				OVHcloud<br>
+				2 rue Kellermann, 59100 Roubaix, France<br>
+				Téléphone : 1007
+			</p>
+
+			<p>Dernière mise à jour : [Date]</p>
+		</div>
+	</main>
+
+	{% include 'assets/footer.html.twig' %}
+{% endblock %}
+

@@ -1,0 +1,8 @@
+.container-auth {
+    max-width: 500px;
+    border-radius: 15px;
+}
+
+.container-auth p {
+    font-size: 14px;
+}

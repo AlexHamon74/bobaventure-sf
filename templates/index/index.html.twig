@@ -5,21 +5,21 @@
 {% block body %}
 	{% include 'assets/header.html.twig' %}
 	<main>
-		<section class="hero-index">
-			<div class="hero-text text-center d-flex flex-column justify-content-center align-items-center h-100 mx-4">
+		<section class="hero-home">
+			<div class="text-center d-flex flex-column justify-content-center align-items-center h-100 mx-4">
 				{% include "assets/flash.html.twig" %}
-				<h1 class="font-light">Bob Aventure</h1>
-				<p class="sous-titre font-light">Raid 4x4 et Découverte</p>
-				<p class="mini-presentation text-center font-light">Explorez les déserts du Maroc et de Mauritanie tout en apportant des<br>fournitures scolaires aux écoles locales</p>
+				<h1 class="color-secondary fw-semibold">Bob Aventure</h1>
+				<p class="color-secondary opacity-75 fw-medium">Raid 4x4 et Découverte</p>
+				<p class="text-center color-secondary opacity-50">Explorez les déserts du Maroc et de Mauritanie tout en apportant des<br>fournitures scolaires aux écoles locales</p>
 				<div class="d-flex gap-4">
-					<a href="#" class="btn-hero-1 font-light">Découvrir nos raids &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i>
+					<a href="{{path('app_news')}}" class="btn-primary">Découvrir nos raids &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i>
 					</a>
-					<a href="#" class="btn-hero-2 font-light">Rejoindre l'aventure</a>
+					<a href="{{path('app_login')}}" class="btn-secondary">Rejoindre l'aventure</a>
 				</div>
 			</div>
 		</section>
 
-		<section class="presentation bgc-primary py-5">
+		<section class="presentation bgc-secondary py-5">
 			<div class="container">
 				<div class="text-center mb-5">
 					<h2>Notre Mission</h2>
@@ -27,8 +27,8 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-4 col-12 mb-4">
-						<div class="card-custom p-3 text-center">
-							<div class="icon-card">
+						<div class="card-custom p-3 text-center bgc-secondary-light">
+							<div class="icon-card color-secondary">
 								<i class="fa-solid fa-globe fa-2xl"></i>
 							</div>
 							<h3>Exploration</h3>
@@ -36,8 +36,8 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-12 mb-4">
-						<div class="card-custom p-3 text-center">
-							<div class="icon-card">
+						<div class="card-custom p-3 text-center bgc-secondary-light">
+							<div class="icon-card color-secondary">
 								<i class="fa-solid fa-heart fa-2xl"></i>
 							</div>
 							<h3>Solidarité</h3>
@@ -45,8 +45,8 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-12 mb-4">
-						<div class="card-custom p-3 text-center">
-							<div class="icon-card">
+						<div class="card-custom p-3 text-center bgc-secondary-light">
+							<div class="icon-card color-secondary">
 								<i class="fa-solid fa-users fa-2xl"></i>
 							</div>
 							<h3>Communauté</h3>
@@ -58,58 +58,27 @@
 			</div>
 		</section>
 
-		<section class="actus bgc-secondary py-5">
+		<section class="actus bgc-secondary-light py-5">
 			<div class="container">
-				<div class="text-center mb-5">
+				<div class="text-center mb-4">
 					<h2>Dernières Actualités</h2>
 					<p>Suivez nos aventures et nos actions sur le terrain</p>
 				</div>
-				<div class="row mb-5">
-					<div class="col-lg-4 col-12 mb-4">
-						<div class="card-actus position-relative">
-							<span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-							<img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
-							<div class="card-actus-content p-4">
-								<p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;15 Mars 2024</p>
-								<h3>Raid Mauritanie 2024 : Une aventure solidaire</h3>
-								<p class="text-truncate-2">Retour sur notre dernière expédition en Mauritanie où nous avons parcouru plus de 2000km à travers le désert...</p>
-								<a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-12 mb-4">
-						<div class="card-actus position-relative">
-							<span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-							<img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
-							<div class="card-actus-content p-4">
-								<p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;8 Mars 2024</p>
-								<h3>Distribution de fournitures scolaires au Maroc</h3>
-								<p class="text-truncate-2">Plus de 500 enfants ont reçu des cahiers, stylos et livres dans les écoles des villages traversés...</p>
-								<a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-12 mb-4">
-						<div class="card-actus position-relative">
-							<span class="badge position-absolute top-0 end-0 m-2">Raid</span>
-							<img class="card-actus-img" src="{{ asset('images/img-hero.jpg') }}" alt="">
-							<div class="card-actus-content p-4">
-								<p><i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;1 Mars 2024</p>
-								<h3>Prochaine expédition : Cap sur le Sud Marocain</h3>
-								<p class="text-truncate-2">Préparez-vous pour notre prochain raid prévu en octobre 2024. Inscriptions ouvertes...</p>
-								<a class="d-block" href="#">Lire la suite&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
+				<div class="row">
+					{% for article in articles %}
+						{% include 'assets/card.html.twig' with { article: article } %}
+					{% else %}
+						<h3 class="text-center mb-4">Aucun article trouvé.</h3>
+					{% endfor %}
 				</div>
 				<div class="text-center">
-					<a class="all-actus-btn" href="#">Voir toutes les actualités</a>
+					<a class="btn-tertiary" href="{{path('app_news')}}">Voir toutes les actualités</a>
 				</div>
 			</div>
 
 		</section>
 
-		<section class="carousel bgc-primary py-5">
+		<section class="carousel bgc-secondary py-5">
 			<div class="container-fluid">
 				<div class="text-center mb-5">
 					<h2>Nos Aventures en Images</h2>

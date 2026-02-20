@@ -4,9 +4,9 @@
 
 {% block body %}
     {% include 'assets/header.html.twig' %}
-
-    <section class="bg-auth">
-        <div class="container container-login bgc-secondary text-center">
+<main class="bgc-linear-primary">
+    <section class="d-flex align-items-center justify-content-center py-5">
+        <div class="container container-auth bgc-secondary p-5 shadow mx-4">
 
             <h1>Email envoyé 📩</h1>
             <p>Si un compte correspond à votre adresse email, un message vient d'être envoyé contenant un lien de réinitialisation.</p>
@@ -20,6 +20,6 @@
 
         </div>
     </section>
-
+</main>
     {% include 'assets/footer.html.twig' %}
 {% endblock %}

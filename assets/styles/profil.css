@@ -1,0 +1,25 @@
+/* ---------- PAGE PROFIL ---------- */
+/* --------------------------------- */
+.infos-profil .icon-card {
+    background: linear-gradient(135deg, rgb(197, 166, 135) 0%, rgb(218, 115, 47) 100%);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.submit-button {
+    background-color: #4a4a4a;
+    color: #f9f8f4 !important;
+    border-radius: 12px;
+    text-align: center;
+    padding: 10px 25px !important;
+    font-weight: 600;
+}
+.submit-button:hover {
+    background-color: #545454;
+    transition: 0.2s;
+}

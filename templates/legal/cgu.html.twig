@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	{% include 'assets/header.html.twig' %}
+
+	<main>
+		<div class="container py-5">
+
+			<h1>Conditions Générales d'Utilisation</h1>
+
+			<h2>1. Objet</h2>
+			<p>
+				Les présentes Conditions Générales d'Utilisation (CGU) ont pour objet
+							    de définir les modalités d'accès et d'utilisation du site
+							    [Nom du site], édité par l'association [Nom de l'association].
+			</p>
+
+			<h2>2. Accès au site</h2>
+			<p>
+				Le site est accessible gratuitement à tout utilisateur disposant
+							    d'un accès à Internet. Certaines fonctionnalités nécessitent
+							    la création d'un compte utilisateur.
+			</p>
+
+			<h2>3. Création de compte</h2>
+			<p>
+				L'utilisateur s'engage à fournir des informations exactes
+							    lors de son inscription.
+			</p>
+			<p>
+				Il est responsable de la confidentialité de ses identifiants
+							    et de toute activité effectuée depuis son compte.
+			</p>
+
+			<h2>4. Règles d'utilisation</h2>
+			<p>
+				L'utilisateur s'engage à ne pas utiliser le site à des fins
+							    illégales ou contraires à l'objet de l'association.
+			</p>
+
+			<h2>5. Responsabilité</h2>
+			<p>
+				L'association ne saurait être tenue responsable
+							    en cas d'interruption du site ou de dysfonctionnement technique.
+			</p>
+
+			<h2>6. Propriété intellectuelle</h2>
+			<p>
+				Les contenus publiés sur le site sont la propriété
+							    de l'association [Nom de l'association],
+							    sauf mention contraire.
+			</p>
+
+			<h2>7. Modification des CGU</h2>
+			<p>
+				L'association se réserve le droit de modifier
+							    les présentes CGU à tout moment.
+			</p>
+
+			<p>Dernière mise à jour : [Date]</p>
+
+		</div>
+	</main>
+
+
+	{% include 'assets/footer.html.twig' %}
+{% endblock %}
+

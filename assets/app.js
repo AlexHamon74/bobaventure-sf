@@ -1,2 +1,10 @@
 import './bootstrap.js';
 import './styles/app.css';
+import './styles/header.css';
+import './styles/footer.css';
+import './styles/card.css';
+import './styles/home.css';
+import './styles/news.css';
+import './styles/news_details.css';
+import './styles/auth.css';
+import './styles/profil.css';
